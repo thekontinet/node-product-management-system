@@ -1,0 +1,67 @@
+<% include partials/_header%> 
+<div class="min-h-full">
+    <nav class="bg-orange-600">
+      <div class="px-4 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <div class="flex items-center justify-between h-16">
+          <div class="flex items-center">
+            <div class="flex-shrink-0">
+              <img class="w-8 h-8" src="https://tailwindui.com/img/logos/workflow-mark-indigo-500.svg" alt="Workflow">
+            </div>
+            <div class="hidden md:block">
+              <div class="flex items-baseline ml-10 space-x-4">
+                <a href="#" class="px-3 py-2 text-sm font-medium text-orange-300 rounded-md hover:bg-orange-700 hover:text-white">Home</a>
+              </div>
+            </div>
+          </div>
+          <div class="hidden md:block">
+            <div class="flex items-center ml-4 md:ml-6">
+              <form action="/logout" method="post">
+                <button class="p-1 text-orange-400 bg-orange-800 rounded-full hover:text-white focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-orange-800 focus:ring-white">
+                  Logout
+                </button>
+              </form>
+
+            </div>
+          </div>
+          <div class="flex -mr-2 md:hidden">
+            <!-- Mobile menu button -->
+            <button type="button" class="inline-flex items-center justify-center p-2 text-orange-400 bg-orange-800 rounded-md hover:text-white hover:bg-orange-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-orange-800 focus:ring-white" aria-controls="mobile-menu" aria-expanded="false">
+              <span class="sr-only">Open main menu</span>
+              <!--
+                Heroicon name: outline/menu
+  
+                Menu open: "hidden", Menu closed: "block"
+              -->
+              <svg class="block w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+              </svg>
+              <!--
+                Heroicon name: outline/x
+  
+                Menu open: "block", Menu closed: "hidden"
+              -->
+              <svg class="hidden w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" aria-hidden="true">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </nav>
+  
+    <header class="bg-white shadow">
+      <div class="px-4 py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <h1 class="text-3xl font-bold text-orange-900">Dashboard</h1>
+      </div>
+    </header>
+    <main>
+      <div class="py-6 mx-auto max-w-7xl sm:px-6 lg:px-8">
+        <!-- Replace with your content -->
+        <div class="px-4 py-6 sm:px-0">
+          <div class="border-4 border-orange-200 border-dashed rounded-lg h-96"></div>
+        </div>
+        <!-- /End replace -->
+      </div>
+    </main>
+  </div>
+  <% include partials/_footer%>   

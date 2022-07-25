@@ -1,0 +1,27 @@
+{
+  "name": "new-project",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon ./bin/www && tailwindcss -i ./src/style.css -o ./public/stylesheets/style.css --watch",
+    "start": "nodemon ./bin/www",
+    "watch": "tailwindcss -i ./src/style.css -o ./public/stylesheets/style.css --watch"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "connect-flash": "^0.1.1",
+    "cookie-parser": "~1.4.4",
+    "debug": "~2.6.9",
+    "ejs": "~2.6.1",
+    "express": "~4.16.1",
+    "express-session": "^1.17.3",
+    "express-validator": "^6.14.2",
+    "http-errors": "~1.6.3",
+    "morgan": "~1.9.1",
+    "mysql2": "^2.3.3",
+    "sequelize": "^6.21.3"
+  },
+  "devDependencies": {
+    "tailwindcss": "^3.1.6"
+  }
+}
