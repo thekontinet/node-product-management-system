@@ -3,9 +3,6 @@ const { auth } = require("../middlewares/auth");
 var router = express.Router();
 const { Product } = require("../models");
 
-const {Product} = require('../models');
-const product = require('../models/product');
-
 router.get('/products', auth, async function(req, res){
     const products = await Product.findAll();
     res.render('dashboard', {products})
