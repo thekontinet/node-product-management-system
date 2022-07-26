@@ -52,6 +52,7 @@ router.post("/products/delete/:id", async function (req, res) {
   try {
     if (user) {
       await Product.destroy(user);
+      req.flash('message', 'Product successfully deleted')
       res.redirect("/products");
     }
   } catch (error) {
