@@ -10,18 +10,25 @@ router.get('/products', auth, async function(req, res){
     // render the view file and send products in
 })
 
-router.get('/products/create', function(req, res){
-    // render the form to display the products
-    res.send("New product form should be displayed here")
+router.get('/products/create', auth, async function(req, res){
+    res.render('product')
 })
 
-router.post('/products', function(req, res){
+router.post('/products', async function(req, res){
     //Get all form data
     // validate the data
     // send to database
     // redirect to /products
-    res.send("This route should create product and redirect")
-})
+    try {
+        const {title, price, quantity} = req.body
+        const product = await Product.create({title, price, quantity})
+        req.flash('message', `products created`)
+        return res.redirect('/products', {product})
+      } catch (error) {
+        req.flash('error', 'Product failed to create')
+        res.redirect('back')
+      }
+});
 
 router.get('/products/:id',async function(req, res){
     // Get all product with specified :id from DB
