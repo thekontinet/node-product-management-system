@@ -41,7 +41,8 @@ router.post("/products/:id", async function (req, res) {
       res.redirect("/products");
     }
   } catch (error) {
-    res.send("product not updated");
+      req.flash('error', 'product not updated')
+    res.redirect("back");
   }
 });
 
@@ -56,7 +57,8 @@ router.post("/products/delete/:id", async function (req, res) {
       res.redirect("/products");
     }
   } catch (error) {
-    res.send("unable to delete");
+      req.flash('error', 'unable to delete')
+    res.redirect("/products/:id");
   }
 });
 
