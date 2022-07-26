@@ -1,12 +1,13 @@
 var express = require('express');
 const { auth } = require('../middlewares/auth');
 var router = express.Router();
-const {Product} = require('../models')
+const {Product} = require('../models');
+const product = require('../models/product');
 
-router.get('/products', function(req, res){
-    // Get all products from DB
+router.get('/products', auth, async function(req, res){
+    const products = await Product.findAll();
+    res.render('dashboard', {products})
     // render the view file and send products in
-    res.send("List of product should be displayed here")
 })
 
 router.get('/products/create', function(req, res){
