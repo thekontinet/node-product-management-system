@@ -22,10 +22,16 @@ router.post('/products', function(req, res){
     res.send("This route should create product and redirect")
 })
 
-router.get('/products/:id', function(req, res){
+router.get('/products/:id',async function(req, res){
     // Get all product with specified :id from DB
     // render the view file that has edit form and send products data in
-    res.send("Edit product form should be displayed here")
+    try {
+        const product = await Product.findOne({where: {id:req.params.id}})
+        res.render("edit-products", {product})
+    } catch (error) {
+        req.flash('error', "Failed to get data")
+        res.redirect('back')
+    }
 })
 
 router.post('/products/:id', function(req, res){
