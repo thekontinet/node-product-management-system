@@ -1637,3 +1637,27 @@ video {
     padding-bottom: 8rem;
   }
 }
+
+
+.products {
+  padding: 10px;
+  margin: 10px;
+  display: flex;
+  /* float: left; */
+}
+
+.products img{
+  border: 2px solid grey;
+}
+
+.products .product_1 {
+  margin: 10px;
+}
+
+.products .product_2 {
+  margin: 10px;
+}
+
+.products .product_3 {
+  margin: 10px;
+}
